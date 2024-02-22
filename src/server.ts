@@ -81,7 +81,7 @@ const start = async () => {
     const parsedUrl = parse(req.url, true)
     const { query } = parsedUrl
 
-    return nextApp.render(req, res, '/cart', query)
+    return nextApp.render(req, res, '/cart', parsedUrl.query)
   })
 
   app.use('/cart', cartRouter)
