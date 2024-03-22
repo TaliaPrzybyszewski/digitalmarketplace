@@ -1,13 +1,13 @@
-import Link from "next/link";
-import { Icons } from "./Icons";
-import MaxWidthWrapper from "./MaxWidthWrapper";
-import NavItems from "./NavItems";
-import { buttonVariants } from "./ui/button";
-import Cart from "./Cart";
-import { getServerSideUser } from "@/lib/payload-utlis";
-import { cookies } from "next/headers";
-import UserAccountNav from "./UserAccountNav";
-import MobileNav from "./MobileNav";
+import Link from 'next/link'
+import { Icons } from './Icons'
+import MaxWidthWrapper from './MaxWidthWrapper'
+import NavItems from './NavItems'
+import { buttonVariants } from './ui/button'
+import Cart from './Cart'
+import { getServerSideUser } from '@/lib/payload-utlis'
+import { cookies } from 'next/headers'
+import UserAccountNav from './UserAccountNav'
+import MobileNav from './MobileNav'
 
 const Navbar = async () => {
   //testing signed in user
@@ -20,8 +20,7 @@ const Navbar = async () => {
         <MaxWidthWrapper>
           <div className="border-b border-gray-200">
             <div className="flex h-16 items-center">
-            <MobileNav />
-
+              <MobileNav />
 
               <div className="ml-4 flex lg:ml-0">
                 <Link href="/">
@@ -36,7 +35,7 @@ const Navbar = async () => {
                   {user ? null : (
                     <Link
                       href="/sign-in"
-                      className={buttonVariants({ variant: "ghost", })}
+                      className={buttonVariants({ variant: 'ghost' })}
                     >
                       Sign in
                     </Link>
@@ -46,11 +45,11 @@ const Navbar = async () => {
                   )}
 
                   {user ? (
-                    <UserAccountNav user={user}/>
+                    <UserAccountNav user={user} />
                   ) : (
                     <Link
                       href="/sign-up"
-                      className={buttonVariants({ variant: "ghost", })}
+                      className={buttonVariants({ variant: 'ghost' })}
                     >
                       Create account
                     </Link>
@@ -78,7 +77,7 @@ const Navbar = async () => {
         </MaxWidthWrapper>
       </header>
     </div>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
